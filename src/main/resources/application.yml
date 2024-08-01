@@ -1,0 +1,40 @@
+
+# Application name
+spring:
+  application:
+    name: spring-cloud-creditcardservice
+
+# DataSource configuration
+  datasource:
+    url: jdbc:mysql://localhost:3306/BankingApplicationFeign
+    username: root
+    password: Verinite@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# JPA/Hibernate configuration
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+
+# Eureka configuration
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+#
+# Server configuration
+server:
+  port: 8081
+  servlet:
+    context-path: /spring-cloud-creditcardservice/api
+
+
+
+  zipkin:
+    base-url: http://localhost:9411/
